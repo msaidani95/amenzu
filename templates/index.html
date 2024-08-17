@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Prix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Recherche de Prix sur Amazon</h1>
+    </header>
+    <main>
+        <form method="post">
+            <label for="product_name">Nom du produit :</label>
+            <input type="text" id="product_name" name="product_name" required>
+            <button type="submit">Rechercher</button>
+        </form>
+        {% if product_name %}
+            <h2>Prix pour "{{ product_name }}" :</h2>
+            <p>{{ price }}</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Mon Site</p>
+    </footer>
+</body>
+</html>
